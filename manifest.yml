@@ -1,0 +1,12 @@
+---
+applications:
+- name: websocketd-dea
+  memory: 4M
+  disk_quota: 2M
+  instances: 1
+  timeout: 20
+  host: websocketd-dea
+  domain: 10.244.0.34.xip.io
+  path: .
+  buildpack: websocketd_buildpack
+  command: /app/websocketd/websocketd --port=$VCAP_APP_PORT --devconsole --dir=/app/websocketd
